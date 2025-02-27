@@ -1,0 +1,63 @@
+.item-count button {
+    padding: 5px 12px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-count .boton-restar {
+    background-color: #007bff;
+    color: white;
+}
+
+.item-count .boton-restar:hover {
+    background-color: #0056b3;
+}
+
+.item-count .boton-restar:active {
+    background-color: #004085;
+}
+
+.item-count .boton-sumar {
+    background-color: #007bff;
+    color: white;
+}
+
+.item-count .boton-sumar:hover {
+    background-color: #0056b3;
+}
+
+.item-count .boton-sumar:active {
+    background-color: #004085;
+}
+
+.item-count .add-to-cart-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.3em;
+    cursor: pointer;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+.item-count .add-to-cart-btn:hover {
+    background-color: #218838;
+}
+
+.item-count .add-to-cart-btn:active {
+    background-color: #1e7e34;
+}
+
