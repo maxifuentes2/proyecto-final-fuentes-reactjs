@@ -42,12 +42,11 @@ El proyecto sigue una estructura modular con separación de componentes según s
 
 1. Clona este repositorio
 
-git clone https://github.com/tu-usuario/urban-verb.git
+git clone https://github.com/maxifuentes2/proyecto-final-fuentes-reactjs
 
 
 2. Instala las dependencias
 
-cd urban-verb
 npm install
 
 
