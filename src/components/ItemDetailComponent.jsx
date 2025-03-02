@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Importamos useNavigate
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import Swal from 'sweetalert2';
 import './ItemDetailComponent.css';
@@ -9,7 +9,7 @@ export default function ItemDetail({ product }) {
     const [showModal, setShowModal] = useState(false);
     const [quantity, setQuantity] = useState(1);
     const [goToCart, setGoToCart] = useState(false);
-    const navigate = useNavigate(); // Inicializamos el hook useNavigate
+    const navigate = useNavigate();
 
     const handleAddToCart = () => {
         addToCart(product, quantity);
@@ -25,7 +25,7 @@ export default function ItemDetail({ product }) {
 
     const handleContinueShopping = () => {
         setGoToCart(false);
-        navigate('/'); // Redirige a la página inicial
+        navigate('/');
     };
 
     return (
@@ -67,7 +67,7 @@ export default function ItemDetail({ product }) {
                     <Link to="/cart" className="go-to-cart-btn">Ir al carrito</Link>
                     <button 
                         className="continue-shopping-btn" 
-                        onClick={handleContinueShopping} // Llamamos a la función de redirección
+                        onClick={handleContinueShopping}
                     >
                         Seguir comprando
                     </button>

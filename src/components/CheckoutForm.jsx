@@ -22,7 +22,6 @@ const CheckoutForm = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [touched, setTouched] = useState({});
 
-    // Validate the field when it loses focus
     const handleBlur = (e) => {
         const { name } = e.target;
         setTouched({ ...touched, [name]: true });
@@ -33,7 +32,6 @@ const CheckoutForm = () => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
 
-        // Only validate if field has been touched
         if (touched[name]) {
             validateField(name, value);
         }
@@ -62,7 +60,6 @@ const CheckoutForm = () => {
                     delete newErrors.email;
                 }
                 
-                // Also validate confirmEmail if it exists
                 if (formData.confirmEmail && formData.confirmEmail !== value) {
                     newErrors.confirmEmail = 'Los emails no coinciden';
                 } else if (formData.confirmEmail && formData.confirmEmail === value) {
@@ -102,14 +99,12 @@ const CheckoutForm = () => {
     };
 
     const validateForm = () => {
-        // Mark all fields as touched
         const allTouched = Object.keys(formData).reduce((acc, field) => {
             acc[field] = true;
             return acc;
         }, {});
         setTouched(allTouched);
 
-        // Validate all fields
         let valid = true;
         Object.keys(formData).forEach(field => {
             const fieldValid = validateField(field, formData[field]);
@@ -132,7 +127,6 @@ const CheckoutForm = () => {
             return;
         }
 
-        // Verify cart isn't empty
         if (cart.length === 0) {
             Swal.fire({
                 title: 'Carrito vacío',
