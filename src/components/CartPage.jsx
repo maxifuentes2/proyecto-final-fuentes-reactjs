@@ -14,6 +14,9 @@ const CartPage = () => {
         return (
             <div className="empty-cart">
                 <h2>EL CARRITO ESTÁ VACÍO.</h2>
+                <button onClick={() => navigate('/')} className="back-to-home">
+                    Volver al inicio
+                </button>
             </div>
         );
     }
@@ -79,3 +82,4 @@ const CartPage = () => {
 };
 
 export default CartPage;
+
