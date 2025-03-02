@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import { useCart } from './CartContext'; 
+import { Link, NavLink } from 'react-router-dom';
+import { useCart } from '../context/CartContext'; 
 import './NavBar.css';
 import Logo from './Logo';
 import CartWidget from './CartWidget';
@@ -16,9 +16,15 @@ export default function NavBar() {
                     <Logo />
                 </Link>
                 <div>
-                    <Link to="/category/remeras" className='botonesheader'>Remeras</Link>
-                    <Link to="/category/hoodies" className='botonesheader'>Hoodies</Link>
-                    <Link to="/category/pantalones" className='botonesheader'>Pantalones</Link>
+                    <NavLink to="/category/remeras" className={({ isActive }) => isActive ? 'botonesheader active-link' : 'botonesheader'}>
+                        Remeras
+                    </NavLink>
+                    <NavLink to="/category/hoodies" className={({ isActive }) => isActive ? 'botonesheader active-link' : 'botonesheader'}>
+                        Hoodies
+                    </NavLink>
+                    <NavLink to="/category/pantalones" className={({ isActive }) => isActive ? 'botonesheader active-link' : 'botonesheader'}>
+                        Pantalones
+                    </NavLink>
                 </div>
                 <Link to="/cart">
                     <CartWidget cartCount={totalItems} />
@@ -27,6 +33,3 @@ export default function NavBar() {
         </header>    
     );
 }
-
-
-

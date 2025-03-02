@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useCart } from '../components/CartContext';
+import { useCart } from '../context/CartContext';
 import './CartWidget.css';
 
 export default function CartWidget() {

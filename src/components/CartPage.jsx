@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCart } from '../components/CartContext';
+import { useCart } from '../context/CartContext';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import './CartPage.css';
@@ -52,23 +52,8 @@ const CartPage = () => {
         });
     };
 
-    const handlePurchase = () => {
-        Swal.fire({
-            title: 'Confirmar compra',
-            text: `El total de la compra es $${getTotalPrice()}. ¿Deseas continuar?`,
-            icon: 'info',
-            showCancelButton: true,
-            confirmButtonText: 'Sí, comprar',
-            cancelButtonText: 'Cancelar',
-            reverseButtons: true
-        }).then((result) => {
-            if (result.isConfirmed) {
-                clearCart();
-                Swal.fire('Compra realizada', '¡Gracias por tu compra!', 'success').then(() => {
-                    navigate('/'); // Redirige a la página inicial después de la compra
-                });
-            }
-        });
+    const handleCheckout = () => {
+        navigate('/checkout');
     };
 
     return (
@@ -87,7 +72,7 @@ const CartPage = () => {
             <h3>Total: ${getTotalPrice()}</h3>
             <div className="cart-actions">
                 <button onClick={handleClearCart} className="vaciar">Vaciar carrito</button>
-                <button onClick={handlePurchase} className="comprar">Comprar</button>
+                <button onClick={handleCheckout} className="comprar">Finalizar compra</button>
             </div>
         </div>
     );

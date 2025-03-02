@@ -1,4 +1,3 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import {
     getFirestore,
@@ -12,30 +11,27 @@ import {
 import { useState, useEffect } from 'react';
 import { getAnalytics } from 'firebase/analytics';
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: 'AIzaSyAOo_Cm2FpMLPuWSA7MgGmslr4LzmlgeOA',
-    authDomain: 'proyectofinal-fuentes.firebaseapp.com',
-    projectId: 'proyectofinal-fuentes',
-    storageBucket: 'proyectofinal-fuentes.firebasestorage.app',
-    messagingSenderId: '490050214407',
-    appId: '1:490050214407:web:75c0c9c6cd2839a9a4e8a2',
-    measurementId: 'G-3XF6QZ8CMG',
+    apiKey:'AIzaSyAOo_Cm2FpMLPuWSA7MgGmslr4LzmlgeOA',
+    authDomain:'proyectofinal-fuentes.firebaseapp.com',
+    projectId:'proyectofinal-fuentes',
+    storageBucket:'proyectofinal-fuentes.firebasestorage.app',
+    messagingSenderId:'490050214407',
+    appId:'1:490050214407:web:75c0c9c6cd2839a9a4e8a2',
+    measurementId:'G-3XF6QZ8CMG',
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const analytics = getAnalytics(app);
 
-// Obtener un producto específico por ID
 export async function getProduct(id) {
     try {
-        const productRef = doc(db, 'products', id.toString()); // Convierte id a string si es necesario
+        const productRef = doc(db, 'products', id.toString());
         const productSnap = await getDoc(productRef);
         if (productSnap.exists()) {
             const data = { id: productSnap.id, ...productSnap.data() };
-            console.log('Producto obtenido:', data); // Depuración adicional
+            console.log('Producto obtenido:', data);
             return data;
         } else {
             throw new Error('Producto no encontrado');
@@ -46,7 +42,6 @@ export async function getProduct(id) {
     }
 }
 
-// Obtener todos los productos
 export async function getProducts() {
     try {
         const querySnapshot = await getDocs(collection(db, 'products'));
@@ -57,7 +52,7 @@ export async function getProducts() {
                     ...docu.data(),
                 };
             });
-            console.log('Productos obtenidos:', productsList); // Depuración adicional
+            console.log('Productos obtenidos:', productsList);
             return productsList;
         } else {
             console.log('Colección vacía!');
@@ -67,7 +62,6 @@ export async function getProducts() {
     }
 }
 
-// Obtener productos por categoría
 export async function getCategory(category) {
     try {
         const q = query(collection(db, 'products'), where('category', '==', category));
@@ -79,7 +73,7 @@ export async function getCategory(category) {
                     ...docu.data(),
                 };
             });
-            console.log('Productos por categoría obtenidos:', productsList); // Depuración adicional
+            console.log('Productos por categoría obtenidos:', productsList);
             return productsList;
         } else {
             console.log('Colección vacía para esta categoría!');
@@ -89,7 +83,6 @@ export async function getCategory(category) {
     }
 }
 
-// Hook personalizado para usar productos con React
 export const useProducts = (category) => {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -103,7 +96,7 @@ export const useProducts = (category) => {
                 } else {
                     products = await getProducts();
                 }
-                console.log('Productos obtenidos en useProducts:', products); // Depuración adicional
+                console.log('Productos obtenidos en useProducts:', products);
                 setItems(products || []);
             } catch (error) {
                 console.error('Error loading products:', error);
