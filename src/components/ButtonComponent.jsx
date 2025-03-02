@@ -1,8 +1,6 @@
-import './ButtonComponent.css';
-
-export default function ButtonComponent({ text, onClick }) {
+export default function ButtonComponent({ text, onClick, className = '' }) {
     return (
-        <button className='headerbutton' onClick={onClick}>
+        <button className={`headerbutton ${className}`} onClick={onClick}>
             {text}
         </button>
     );

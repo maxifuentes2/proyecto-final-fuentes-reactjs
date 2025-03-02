@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getProduct } from '../firebase/firebase'; 
-import ItemDetail from './ItemDetailComponent'; 
+import { getProduct } from '../firebase/firebase';
+import ItemDetail from './ProductDetail';
 import './ItemDetailContainer.css';
 
 export default function ItemDetailContainer() {
@@ -14,7 +14,7 @@ export default function ItemDetailContainer() {
         const fetchProduct = async () => {
             try {
                 setLoading(true);
-                const productData = await getProduct(id); 
+                const productData = await getProduct(id);
                 setProduct(productData);
             } catch (error) {
                 setError("Error al cargar el producto");
@@ -26,9 +26,7 @@ export default function ItemDetailContainer() {
         fetchProduct();
     }, [id]);
 
-    if (loading) return <p className='loading'>Cargando producto...</p>;
-    if (error) return <p className='error'>{error}</p>;
-    if (!product) return <p>Producto no encontrado.</p>;
-
-    return <ItemDetail product={product} />;
+    return (
+        <ItemDetail product={product} loading={loading} error={error} />
+    );
 }

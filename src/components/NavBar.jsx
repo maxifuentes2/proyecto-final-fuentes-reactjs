@@ -1,12 +1,12 @@
 import { Link, NavLink } from 'react-router-dom';
-import { useCart } from '../context/CartContext'; 
+import { useCart } from '../context/CartContext';
 import './NavBar.css';
 import Logo from './Logo';
 import CartWidget from './CartWidget';
+import ButtonComponent from './ButtonComponent';
 
 export default function NavBar() {
     const { cart } = useCart();
-
     const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
 
     return (
@@ -16,20 +16,29 @@ export default function NavBar() {
                     <Logo />
                 </Link>
                 <div>
-                    <NavLink to="/category/remeras" className={({ isActive }) => isActive ? 'headerbutton active-link' : 'headerbutton'}>
-                        Remeras
+                    <NavLink
+                        to="/category/remeras"
+                        className={({ isActive }) => (isActive ? 'active-link' : '')}
+                    >
+                        <ButtonComponent text="Remeras" />
                     </NavLink>
-                    <NavLink to="/category/hoodies" className={({ isActive }) => isActive ? 'headerbutton active-link' : 'headerbutton'}>
-                        Hoodies
+                    <NavLink
+                        to="/category/hoodies"
+                        className={({ isActive }) => (isActive ? 'active-link' : '')}
+                    >
+                        <ButtonComponent text="Hoodies" />
                     </NavLink>
-                    <NavLink to="/category/pantalones" className={({ isActive }) => isActive ? 'headerbutton active-link' : 'headerbutton'}>
-                        Pantalones
+                    <NavLink
+                        to="/category/pantalones"
+                        className={({ isActive }) => (isActive ? 'active-link' : '')}
+                    >
+                        <ButtonComponent text="Pantalones" />
                     </NavLink>
                 </div>
                 <Link to="/cart">
                     <CartWidget cartCount={totalItems} />
                 </Link>
-            </nav>           
-        </header>    
+            </nav>
+        </header>
     );
 }

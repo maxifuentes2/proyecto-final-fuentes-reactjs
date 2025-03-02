@@ -1,31 +1,16 @@
 import { useParams } from 'react-router-dom';
 import { useProducts } from '../firebase/firebase';
-import ProductCard from './ProductCard';
+import ProductList from './ProductList';
 import './ItemListContainer.css';
 
 export default function ItemListContainer({ mensaje }) {
-    const { category } = useParams(); 
-    const { items, loading } = useProducts(category);
-
-    if (loading) {
-        return <p className="loading">CARGANDO PRODUCTOS...</p>; 
-    }
+    const { category } = useParams();
+    const { items: products, loading } = useProducts(category);
 
     const capitalizar = (str) => str.charAt(0).toUpperCase() + str.slice(1);
-    return (
-        <main>
-            <h1>{category ? capitalizar(category) : mensaje}</h1>
-            <div className="product-list">
-                {items.length > 0 ? (
-                    items.map((product) => (
-                        <ProductCard key={product.id} product={product} />
-                    ))
-                ) : (
-                    <p>No hay productos disponibles en esta categoría.</p>
-                )}
-            </div>
-        </main>
-    );
+    const title = category ? capitalizar(category) : mensaje;
+
+    return <ProductList title={title} products={products} loading={loading} />;
 }
 
 

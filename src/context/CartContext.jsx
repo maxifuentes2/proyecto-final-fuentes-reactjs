@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import { createContext, useState, useContext, useEffect } from 'react';
 
 const CartContext = createContext();
 
@@ -20,13 +20,13 @@ export const CartProvider = ({ children }) => {
         const validQuantity = parseInt(quantity, 10);
         if (isNaN(validQuantity) || validQuantity <= 0) return;
 
-        setCart(prevCart => {
-            const existingProduct = prevCart.find(item => item.id === product.id);
+        setCart((prevCart) => {
+            const existingProduct = prevCart.find((p) => p.id === product.id);
             if (existingProduct) {
-                return prevCart.map(item =>
-                    item.id === product.id
-                        ? { ...item, quantity: item.quantity + validQuantity }
-                        : item
+                return prevCart.map((p) =>
+                    p.id === product.id
+                        ? { ...p, quantity: p.quantity + validQuantity }
+                        : p
                 );
             } else {
                 return [...prevCart, { ...product, quantity: validQuantity }];
@@ -35,15 +35,15 @@ export const CartProvider = ({ children }) => {
     };
 
     const removeFromCart = (id) => {
-        setCart(prevCart => prevCart.filter(item => item.id !== id));
+        setCart((prevCart) => prevCart.filter((product) => product.id !== id));
     };
 
     const getTotalPrice = () => {
-        return cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+        return cart.reduce((acc, product) => acc + product.price * product.quantity, 0);
     };
 
     const getTotalQuantity = () => {
-        return cart.reduce((acc, item) => acc + item.quantity, 0);
+        return cart.reduce((acc, product) => acc + product.quantity, 0);
     };
 
     const clearCart = () => {
@@ -51,7 +51,9 @@ export const CartProvider = ({ children }) => {
     };
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, getTotalPrice, getTotalQuantity, clearCart }}>
+        <CartContext.Provider
+            value={{ cart, addToCart, removeFromCart, getTotalPrice, getTotalQuantity, clearCart }}
+        >
             {children}
         </CartContext.Provider>
     );
