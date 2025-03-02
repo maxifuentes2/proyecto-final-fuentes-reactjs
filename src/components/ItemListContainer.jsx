@@ -8,7 +8,7 @@ export default function ItemListContainer({ mensaje }) {
     const { items, loading } = useProducts(category);
 
     if (loading) {
-        return <p className="cargando">Cargando productos...</p>; 
+        return <p className="loading">Cargando productos...</p>; 
     }
 
     const capitalizar = (str) => str.charAt(0).toUpperCase() + str.slice(1);

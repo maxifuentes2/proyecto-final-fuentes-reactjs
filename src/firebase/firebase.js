@@ -56,9 +56,11 @@ export async function getProducts() {
             return productsList;
         } else {
             console.log('Colección vacía!');
+            return [];
         }
     } catch (error) {
         console.error('Error al obtener la colección:', error);
+        throw new Error('No se pudieron cargar los productos. Intente nuevamente más tarde.');
     }
 }
 

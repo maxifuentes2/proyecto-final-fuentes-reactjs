@@ -16,13 +16,13 @@ export default function NavBar() {
                     <Logo />
                 </Link>
                 <div>
-                    <NavLink to="/category/remeras" className={({ isActive }) => isActive ? 'botonesheader active-link' : 'botonesheader'}>
+                    <NavLink to="/category/remeras" className={({ isActive }) => isActive ? 'headerbutton active-link' : 'headerbutton'}>
                         Remeras
                     </NavLink>
-                    <NavLink to="/category/hoodies" className={({ isActive }) => isActive ? 'botonesheader active-link' : 'botonesheader'}>
+                    <NavLink to="/category/hoodies" className={({ isActive }) => isActive ? 'headerbutton active-link' : 'headerbutton'}>
                         Hoodies
                     </NavLink>
-                    <NavLink to="/category/pantalones" className={({ isActive }) => isActive ? 'botonesheader active-link' : 'botonesheader'}>
+                    <NavLink to="/category/pantalones" className={({ isActive }) => isActive ? 'headerbutton active-link' : 'headerbutton'}>
                         Pantalones
                     </NavLink>
                 </div>

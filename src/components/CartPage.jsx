@@ -12,7 +12,7 @@ const CartPage = () => {
 
     if (cart.length === 0) {
         return (
-            <div className="carrito-vacio">
+            <div className="empty-cart">
                 <h2>EL CARRITO ESTÁ VACÍO.</h2>
             </div>
         );
@@ -57,7 +57,7 @@ const CartPage = () => {
     };
 
     return (
-        <div className="carrito-contenido">
+        <div className="cart-container">
             <h2>Carrito de Compras</h2>
             {cart.map(product => (
                 <div key={product.id} className="cart-item">
@@ -66,13 +66,13 @@ const CartPage = () => {
                         <h4>{product.name} (x{product.quantity})</h4>
                         <p>Subtotal: ${product.price * product.quantity}</p>
                     </div>
-                    <button onClick={() => handleRemoveFromCart(product.id)} className='vaciar'>Eliminar</button>
+                    <button onClick={() => handleRemoveFromCart(product.id)} className='clear'>Eliminar</button>
                 </div>
             ))}
             <h3>Total: ${getTotalPrice()}</h3>
             <div className="cart-actions">
-                <button onClick={handleClearCart} className="vaciar">Vaciar carrito</button>
-                <button onClick={handleCheckout} className="comprar">Finalizar compra</button>
+                <button onClick={handleClearCart} className="clear">Vaciar carrito</button>
+                <button onClick={handleCheckout} className="buy">Finalizar compra</button>
             </div>
         </div>
     );

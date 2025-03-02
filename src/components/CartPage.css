@@ -55,14 +55,14 @@ button:hover {
     background-color: #333;
 }
 
-.carrito-vacio {
+.empty-cart {
     font-size: 30px;
     font-weight: 700;
     text-align: center;
     margin-top: 100px;
 }
 
-.vaciar {
+.clear {
     width: calc(100% - 40px);
     margin-left: 20px; 
     margin-right: 20px;
@@ -70,15 +70,15 @@ button:hover {
     color: #ddd;
 }
 
-.vaciar:hover {
+.clear:hover {
     background-color: #333;
 }
 
-.vaciar:active {
+.clear:active {
     background-color: #222;
 }
 
-.comprar {
+.buy {
     width: calc(100% - 40px);
     margin-left: 20px; 
     margin-right: 20px;
@@ -86,11 +86,11 @@ button:hover {
     color: #ddd;
 }
 
-.comprar:hover {
+.buy:hover {
     background-color: #1b4900;
 }
 
-.comprar:active {
+.buy:active {
     background-color: #0a1d00;
 }
 
@@ -121,7 +121,7 @@ button:hover {
         margin-right: auto;
     }
 
-    .vaciar {
+    .clear {
         width: calc(100% - 40px);
         margin-left: 20px;
         margin-right: 20px;
@@ -146,7 +146,7 @@ button:hover {
         margin-right: auto;
     }
 
-    .vaciar {
+    .clear {
         width: calc(100% - 40px);
         margin-left: 20px;
         margin-right: 20px;
