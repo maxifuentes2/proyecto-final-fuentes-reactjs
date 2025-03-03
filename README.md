@@ -1,91 +1,84 @@
+# UrbanVerb - Tienda Online
 
-# UrbanVerb E-Commerce
+Hola! Bienvenido a **UrbanVerb**, mi tienda de ropa urbana hecha con React. Este es mi proyecto final para el curso de React en CoderHouse. La idea era hacer una tienda online que funcione bien y que sea fácil de usar.
 
-Bienvenido a **UrbanVerb**, tu tienda online de ropa urbana favorita. Este proyecto fue desarrollado como parte del curso de React de CoderHouse, y es el proyecto final donde implementamos todas las funcionalidades necesarias para crear una tienda en línea moderna y funcional.
+Puedes ver la página funcionando acá: [UrbanVerb en Vercel](https://proyecto-final-fuentes-reactjs.vercel.app/).
 
-Puedes ver la página web en este [enlace de Vercel](https://proyecto-final-fuentes-reactjs.vercel.app/).
+## Funcionalidades
 
-## Características
+En UrbanVerb puedes:
+- Ver productos por categorías
+- Ver detalles de cada producto
+- Agregar productos al carrito y que se guarden aunque cierres la página
+- Hacer una compra llenando un formulario
+- Guardar todo en Firebase
 
-UrbanVerb ofrece una experiencia de compra completa, con las siguientes características:
+## Tecnologías usadas
 
-- Navegación entre diferentes categorías de productos
-- Visualización detallada de cada producto
-- Carrito de compras con persistencia en el navegador (localStorage)
-- Proceso de checkout con validación de formularios
-- Integración con Firebase para almacenar productos y gestionar órdenes
+Para hacer este proyecto usé:
+- **React** para la interfaz
+- **React Router DOM** para moverme entre páginas
+- **Firebase/Firestore** para guardar productos y órdenes de compra
+- **SweetAlert2** para mostrar alertas bonitas
+- **CSS** para los estilos
 
-## Tecnologías utilizadas
+## Cómo está organizado el código
 
-Para crear UrbanVerb, utilizamos algunas de las mejores herramientas del mundo del desarrollo web:
+Dividí el proyecto en varias partes para que sea más ordenado:
 
-- **React** para la construcción de la interfaz de usuario
-- **React Router DOM** para la navegación entre páginas
-- **Firebase / Firestore** para la base de datos en la nube
-- **SweetAlert2** para mostrar alertas visuales
-- **CSS** para los estilos y diseño
+### Componentes que manejan datos
+- `ItemListContainer`: Muestra los productos
+- `ItemDetailContainer`: Muestra los detalles de un producto
+- `CartPage`: Muestra lo que hay en el carrito
+- `CheckoutForm`: Maneja el formulario de compra
 
-## Estructura del proyecto
-
-El proyecto sigue una estructura modular para mantener el código limpio y organizado. Separamos los componentes según su función:
-
-### Componentes contenedores
-Estos componentes gestionan la lógica y obtienen los datos que necesitamos para mostrar:
-- `ItemListContainer`: Muestra el listado de productos
-- `ItemDetailContainer`: Muestra los detalles de un producto individual
-- `CartPage`: Muestra el carrito de compras
-- `CheckoutForm`: Maneja el proceso de pago
-
-### Componentes presentacionales
-Estos componentes están enfocados solo en la interfaz de usuario (UI):
-- `ProductCard`: Muestra la tarjeta de cada producto
-- `ItemCount`: Muestra un selector de cantidad para los productos
-- `Logo`: El logo de la tienda
-- `CartWidget`: Muestra un icono del carrito con la cantidad de productos
-- `ButtonComponent`: Un botón reutilizable en toda la app
+### Componentes que solo muestran cosas
+- `ProductCard`: Muestra cada producto en una tarjeta
+- `ItemCount`: Permite elegir la cantidad de productos
+- `Logo`: Muestra el logo de la tienda
+- `CartWidget`: Ícono del carrito con la cantidad de productos
+- `ButtonComponent`: Botón reutilizable
 
 ### Contextos
-- **CartContext**: Este contexto gestiona el estado global del carrito de compras, para que los productos añadidos estén disponibles en toda la aplicación.
+- **CartContext**: Maneja el carrito para que funcione en toda la app
 
-## Instalación
+## Cómo instalarlo en tu compu
 
-Si quieres ejecutar el proyecto en tu máquina local, solo sigue estos pasos:
+Si quieres probarlo en tu PC, sigue estos pasos:
 
-1. Clona este repositorio:
+1. Clona el repositorio:
 
-    git clone https://github.com/maxifuentes2/proyecto-final-fuentes-reactjs
-    
-
-2. Instala las dependencias necesarias:
-
-    npm install
+   git clone https://github.com/maxifuentes2/proyecto-final-fuentes-reactjs
 
 
-3. Inicia la aplicación:
+2. Instala las dependencias:
 
-    npm run dev
+   npm install
 
 
-## Características principales
+3. Ejecuta el proyecto:
+
+   npm run dev
+
+## Explicación rápida de cómo funciona
 
 ### Navegación
-La navegación es fluida gracias a **React Router**. Además, usamos `NavLink` para resaltar la ruta activa y mejorar la experiencia del usuario. También creamos rutas dinámicas para las categorías y detalles de los productos.
+Usé **React Router** para moverse entre páginas. También usé `NavLink` para marcar en qué página estás. Se pueden ver productos por categorías o ver los detalles de uno en particular.
 
-### Catálogo y Detalle de Productos
-Puedes ver una lista de productos filtrada por categorías y, al hacer clic en un producto, podrás ver todos sus detalles. Además, es posible añadir productos al carrito directamente desde la página de detalles. Implementamos renderizado condicional para mostrar mensajes de carga cuando es necesario.
+### Catálogo y detalles
+Se muestran los productos con sus categorías. Cuando haces clic en un producto, ves más información y puedes agregarlo al carrito.
 
-### Carrito de Compras
-El carrito permite añadir, eliminar y modificar productos. Además, todo lo que pongas en el carrito se guarda en tu navegador mediante **localStorage**, para que puedas continuar tu compra más tarde. Al finalizar la compra, se valida un formulario de checkout con la información del usuario.
+### Carrito de compras
+Puedes agregar, quitar y modificar productos en el carrito. Todo se guarda en **localStorage** para que no se pierda si cierras la página. También hay un formulario para completar los datos y finalizar la compra.
 
-### Integración con Firebase
-Los productos y las órdenes de compra se almacenan en **Firestore** de Firebase. También implementamos consultas específicas que permiten filtrar los productos por categorías, ofreciendo una experiencia más personalizada.
+### Firebase
+Usé **Firestore** para guardar los productos y los pedidos. También se pueden hacer consultas para filtrar los productos por categoría.
 
-## ¿Cómo comprar?
+## Cómo comprar en la tienda
 
-1. Navega por las categorías o directamente por la página principal de productos.
-2. Haz clic en el producto que te interese para ver sus detalles.
-3. Añade el producto al carrito seleccionando la cantidad que deseas.
-4. Revisa tu carrito de compras y haz cualquier modificación que necesites.
-5. Procede al checkout completando tu información personal.
-6. ¡Recibe la confirmación de tu compra con el número de orden!
-
+1. Explora los productos en la tienda o en las categorías.
+2. Haz clic en el que te guste para ver los detalles.
+3. Elige cuántos quieres y agrégalos al carrito.
+4. Ve al carrito y revisa tu compra.
+5. Llena el formulario con tus datos.
+6. Se genera una orden con un número de confirmación. 
