@@ -1,84 +1,67 @@
-# UrbanVerb - Tienda Online
+🏙️ UrbanVerb - Mi Tienda Online
 
-Hola! Bienvenido a **UrbanVerb**, mi tienda de ropa urbana hecha con React. Este es mi proyecto final para el curso de React en CoderHouse. La idea era hacer una tienda online que funcione bien y que sea fácil de usar.
+¡Bienvenido a UrbanVerb! Esta es mi tienda de ropa urbana hecha en React, mi proyecto final para el curso de React en CoderHouse. La idea era hacer algo simple, pero funcional.
 
-Puedes ver la página funcionando acá: [UrbanVerb en Vercel](https://proyecto-final-fuentes-reactjs.vercel.app/).
+🔗 Probalo acá: UrbanVerb en Vercel
 
-## Funcionalidades
+🚀 ¿Qué podés hacer?
 
-En UrbanVerb puedes:
-- Ver productos por categorías
-- Ver detalles de cada producto
-- Agregar productos al carrito y que se guarden aunque cierres la página
-- Hacer una compra llenando un formulario
-- Guardar todo en Firebase
+Ver productos y filtrarlos por categoría
 
-## Tecnologías usadas
+Ver detalles y agregar cosas al carrito
 
-Para hacer este proyecto usé:
-- **React** para la interfaz
-- **React Router DOM** para moverme entre páginas
-- **Firebase/Firestore** para guardar productos y órdenes de compra
-- **SweetAlert2** para mostrar alertas bonitas
-- **CSS** para los estilos
+Guardar el carrito aunque cierres la página
 
-## Cómo está organizado el código
+Hacer una compra con un formulario
 
-Dividí el proyecto en varias partes para que sea más ordenado:
+Todo queda guardado en Firebase
 
-### Componentes que manejan datos
-- `ItemListContainer`: Muestra los productos
-- `ItemDetailContainer`: Muestra los detalles de un producto
-- `CartPage`: Muestra lo que hay en el carrito
-- `CheckoutForm`: Maneja el formulario de compra
+🛠️ Tecnologías usadas
 
-### Componentes que solo muestran cosas
-- `ProductCard`: Muestra cada producto en una tarjeta
-- `ItemCount`: Permite elegir la cantidad de productos
-- `Logo`: Muestra el logo de la tienda
-- `CartWidget`: Ícono del carrito con la cantidad de productos
-- `ButtonComponent`: Botón reutilizable
+React (interfaz)
 
-### Contextos
-- **CartContext**: Maneja el carrito para que funcione en toda la app
+React Router DOM (navegación)
 
-## Cómo instalarlo en tu compu
+Firebase/Firestore (productos y compras)
 
-Si quieres probarlo en tu PC, sigue estos pasos:
+SweetAlert2 (alertas facheraaas)
 
-1. Clona el repositorio:
+CSS (estilos)
 
-   git clone https://github.com/maxifuentes2/proyecto-final-fuentes-reactjs
+📂 Estructura rápida
 
+ItemListContainer → Lista los productos
 
-2. Instala las dependencias:
+ItemDetailContainer → Muestra detalles
 
-   npm install
+CartPage → El carrito
 
+CheckoutForm → Formulario de compra
 
-3. Ejecuta el proyecto:
+CartContext → Guarda el carrito en toda la app
 
-   npm run dev
+⚡ Instalación en tu PC
 
-## Explicación rápida de cómo funciona
+1️⃣ Cloná el repo:
 
-### Navegación
-Usé **React Router** para moverse entre páginas. También usé `NavLink` para marcar en qué página estás. Se pueden ver productos por categorías o ver los detalles de uno en particular.
+git clone https://github.com/maxifuentes2/proyecto-final-fuentes-reactjs
 
-### Catálogo y detalles
-Se muestran los productos con sus categorías. Cuando haces clic en un producto, ves más información y puedes agregarlo al carrito.
+2️⃣ Instalá las dependencias:
 
-### Carrito de compras
-Puedes agregar, quitar y modificar productos en el carrito. Todo se guarda en **localStorage** para que no se pierda si cierras la página. También hay un formulario para completar los datos y finalizar la compra.
+npm install
 
-### Firebase
-Usé **Firestore** para guardar los productos y los pedidos. También se pueden hacer consultas para filtrar los productos por categoría.
+3️⃣ Corré el proyecto:
 
-## Cómo comprar en la tienda
+npm run dev
 
-1. Explora los productos en la tienda o en las categorías.
-2. Haz clic en el que te guste para ver los detalles.
-3. Elige cuántos quieres y agrégalos al carrito.
-4. Ve al carrito y revisa tu compra.
-5. Llena el formulario con tus datos.
-6. Se genera una orden con un número de confirmación. 
+🛒 ¿Cómo comprar?
+
+Elegí lo que te guste
+
+Agregalo al carrito
+
+Revisá tu compra
+
+Completá el formulario
+
+¡Listo! Te llega una orden con tu número de confirmación
