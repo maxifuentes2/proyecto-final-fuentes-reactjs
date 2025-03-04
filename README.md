@@ -1,67 +1,57 @@
-🏙️ UrbanVerb - Mi Tienda Online
+# UrbanVerb - Mi e-commerce 
 
-¡Bienvenido a UrbanVerb! Esta es mi tienda de ropa urbana hecha en React, mi proyecto final para el curso de React en CoderHouse. La idea era hacer algo simple, pero funcional.
+¡Bienvenido a **UrbanVerb**! Esta es mi tienda de ropa urbana hecha en **React**, mi proyecto final para el curso de **React en CoderHouse**. La idea era hacer algo simple, pero funcional.  
 
-🔗 Probalo acá: UrbanVerb en Vercel
+ **Probalo acá**: [UrbanVerb en Vercel](https://proyecto-final-fuentes-reactjs.vercel.app/)  
 
-🚀 ¿Qué podés hacer?
+##  ¿Qué podés hacer?  
 
-Ver productos y filtrarlos por categoría
+- Ver productos y filtrarlos por categoría  
+- Ver detalles y agregar cosas al carrito  
+- Guardar el carrito aunque cierres la página  
+- Hacer una compra con un formulario  
+- Todo queda guardado en **Firebase**  
 
-Ver detalles y agregar cosas al carrito
+##  Tecnologías usadas  
 
-Guardar el carrito aunque cierres la página
+- **React** (interfaz)  
+- **React Router DOM** (navegación)  
+- **Firebase/Firestore** (productos y compras)  
+- **SweetAlert2** (alertas facheraaas)  
+- **CSS** (estilos)  
 
-Hacer una compra con un formulario
+##  Estructura rápida  
 
-Todo queda guardado en Firebase
+- `ItemListContainer` → Lista los productos  
+- `ItemDetailContainer` → Muestra detalles  
+- `CartPage` → El carrito  
+- `CheckoutForm` → Formulario de compra  
+- `CartContext` → Guarda el carrito en toda la app  
 
-🛠️ Tecnologías usadas
+##  Instalación en tu PC  
 
-React (interfaz)
+1. Cloná el repo:  
 
-React Router DOM (navegación)
 
-Firebase/Firestore (productos y compras)
+   git clone https://github.com/maxifuentes2/proyecto-final-fuentes-reactjs
+ 
 
-SweetAlert2 (alertas facheraaas)
+2. Instalá las dependencias:  
 
-CSS (estilos)
 
-📂 Estructura rápida
+   npm install
 
-ItemListContainer → Lista los productos
 
-ItemDetailContainer → Muestra detalles
+3. Corré el proyecto:  
 
-CartPage → El carrito
 
-CheckoutForm → Formulario de compra
+   npm run dev
+ 
 
-CartContext → Guarda el carrito en toda la app
+## ¿Cómo comprar?  
 
-⚡ Instalación en tu PC
-
-1️⃣ Cloná el repo:
-
-git clone https://github.com/maxifuentes2/proyecto-final-fuentes-reactjs
-
-2️⃣ Instalá las dependencias:
-
-npm install
-
-3️⃣ Corré el proyecto:
-
-npm run dev
-
-🛒 ¿Cómo comprar?
-
-Elegí lo que te guste
-
-Agregalo al carrito
-
-Revisá tu compra
-
-Completá el formulario
-
-¡Listo! Te llega una orden con tu número de confirmación
+1. Elegí lo que te guste  
+2. Agregalo al carrito  
+3. Revisá tu compra  
+4. Completá el formulario  
+5. Te llega una orden con tu número de confirmación
